@@ -1,0 +1,49 @@
+# @host = http://127.0.0.1:8000/api
+# @host = http://192.168.0.125:8002/api
+@host = http://192.168.0.107:8002/api
+
+@token = eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIzIiwianRpIjoiMDhlZTAzMGNhYmQwNDhmMDlmOWZkMGUzNzk0ZGY4ZGQ3NDFiYjlhOTllZDc3NWM2ZmU5NGEzODlmZWE5ZjNiNGFiYmI0MzRlMDE0MDM5NmMiLCJpYXQiOjE2OTI4ODMwNDYuOTA0Mjc3LCJuYmYiOjE2OTI4ODMwNDYuOTA0MjgyLCJleHAiOjE3MjQ1MDU0NDYuODk2MTM3LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.uGMoku0b4XVclRvgx3aNxbB3w6zKDGW9qrX2cO1HHS9Sy-SyF7iKwa5HAoUkgFA-ERR0WXO6d3Biwdo_T09hfO6U_wD0-UPOGGPwRYnxLmh_5zczKXu5U3l9dfND85EFdoMAStCO7ZuV0onE0-8DpHp54RP9RH2LUOIvl3bLfWhldn5TJO0HLI5P-McsATGRAf_I1EOxPlyHRvNF66d3-2Jtb0KtPaf4X2UL2tPF9grb3dhR7625FPobh4V0S7qeGTqboTiGiWpdmP-ToQbH6ZobWjECN4InNj0A505ZNQZfSf7ccIgwU2wHIvE1WWNzqBdKksaMTs4mst0JHELO1y4yJThv9gUAbDcKZYWdg9Sp6zdHVxugH0OB6jkn86FZ3oVcgEVw4l2JVUn71F3-fGRwjySpsb6cwV4MrgXD0UtewJ0u3iyB_mFo4izcEPF-hYdJ0-vKG9_DO3Pdq37qPt8ZrniLfvmnVHOguNfbte0cAvt94XfCmoJ3Fp6md-3w4TZJODdO_3J_0380MIw0SPZmpzmxaLdwybFYnpX_UcvMl1bSbakY6yj4qDtNle7jjqwou7Soj33u_CtoFjd--TX8g4fTw1E7cB2TDVdrDEnlyTo7OKt2ASkTuhHEp1qVODDquNdgakz6Kb2qvHpM4xJfyo7GzTPRD9Cy16OIuDU
+
+GET {{host}}/auth/user HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+
+################
+## login user
+POST {{host}}/auth/login HTTP/1.1
+Content-Type: application/json
+# app-role: owner
+
+{
+  "email": "owner@gmail.com",
+  "password": "passward"
+
+}
+
+################
+## Logout
+POST {{host}}/auth/logout HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+
+}
+
+################
+## Employee Add
+POST {{host}}/auth/add-employee HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer {{token}}
+# app-role: employee
+
+{
+
+  "username": "Jeri",
+  "email": "jeri1@gmail.com",
+  "password": "123456",
+  "designation": "developer"
+
+}
+

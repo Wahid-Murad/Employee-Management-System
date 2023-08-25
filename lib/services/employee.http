@@ -1,0 +1,88 @@
+# @host = http://127.0.0.1:8000/api
+# @host = http://192.168.0.125:8002/api
+
+@host = http://192.168.0.107:8002/api
+
+@token = eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIzIiwianRpIjoiYjE5ODM0ZjM4ZTI0ZGM5MmY4NWQwODZhMDNmNjNiZmMyMGI5YmIxYWQ0MDdjMjNlZTgxY2Q3YWQ2NTgzMjBkMjUzYjg0ZWU5N2MzZjIyNDgiLCJpYXQiOjE2OTI4NTMxMjMuMjk3MzQ2LCJuYmYiOjE2OTI4NTMxMjMuMjk3MzQ4LCJleHAiOjE3MjQ0NzU1MjMuMjg3NzcsInN1YiI6IjEzIiwic2NvcGVzIjpbXX0.Ucuu4MtdTTTmZwfcXEw_l4lqq0t4DeSZaac-DRHphxmneovlNY8LRSz3WbmZ3jcmr84t3VF4RmAfTr3SpL9DlLL8tIWXVMdT7rgClCTRWJFTZcddyISyXuiUxUfBjUnd5kZ5SNgZN6PCNhNWmzDKWqYyU2pWdueCBzYbBXOtQYdWOzlk1MQtwjDfaVOaD3o-wWYRGw6B49mFlH0y5nqN9UYoi8dyknLoOjJ2TgUGwFodL0fRtmNW3G6_hE3ezylAEDhKADqN1AdsAcFL4aF_Bu7f5RaFpq7uBNFfYECkjE_NazBSJ3ZU61QIeOf1dJqTH2B0vhYH6APyBBU9xbqpPMBiDMFwy92JGeor9P3HkPzefMlFuvRvzmEv9oyulYB11AOHjCZ2AB7T76c33WOxLJCJMb37hpzIMmdhsTpKmql9jovbnUe1l9u8Za42uMh4drgyTQSW7UF5Dbaq2xA-Z6gg7dMM4Wn3OUCAuqEqww4ANIkBVLqfX0InBpTL1yvVxloXaxyvwPxfT02bVrLKo_enNGoDNn-EgiYq3RXh7T1CpJxBMRhWwra6LIhcHvJVE1_FGj4HhaiTV2hFYYLgco3UbP57FtOP7zZ3KRr3tozVwcrJiFHblhq15eONplWbNGPbYF5z_bXMuSa3sR5t2ebQhCbL2P7oDsCwGKZpWJc
+##get user 
+GET {{host}}/auth/user HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+
+################
+## login user
+POST {{host}}/auth/login HTTP/1.1
+Content-Type: application/json
+app-role: employee
+
+{
+  "email": "jeri1@gmail.com",
+  "password": "234567"
+
+}
+
+################
+## Logout
+POST {{host}}/auth/logout HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+
+}
+
+################
+## Check In
+POST {{host}}/employee/checkin HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer {{token}}
+app-role: employee
+
+{
+
+
+}
+
+################
+## Start Break
+POST {{host}}/employee/start-break HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer {{token}}
+app-role: employee
+
+{
+
+
+}
+
+################
+## End Break
+POST {{host}}/employee/end-break HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer {{token}}
+app-role: employee
+
+{
+
+
+}
+
+################
+## Check out
+POST {{host}}/employee/checkout HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer {{token}}
+app-role: employee
+
+{
+
+
+}
+
+
+
+
+
+
+
